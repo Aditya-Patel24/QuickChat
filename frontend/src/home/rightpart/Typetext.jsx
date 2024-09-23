@@ -8,7 +8,7 @@ const Typetext = () => {
         <input
           type="text"
           placeholder="Type here"
-          className="border border-gray-900 bg-gray-600 rounded-xl outline-none items-center pl-4 w-full p-2"
+          className="bg-gray-600 rounded-xl outline-none items-center pl-4 w-full p-2"
         />
       </div>
       <button>
