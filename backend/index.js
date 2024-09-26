@@ -7,15 +7,12 @@ import cookieParser from 'cookie-parser';
 
 dotenv.config();
 const app = express();
-app.use(cors({
-    origin: 'http://localhost:5173',
-    credentials: true, 
-}));
-app.use(cookieParser());
 app.use(express.json());
+app.use(cookieParser());
+app.use(cors());
 
 const URI = process.env.MONGODB_URI;
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4002;
 
 mongoose.connect(URI)
     .then(() => console.log('MongoDB connected'))

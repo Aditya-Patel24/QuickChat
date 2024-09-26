@@ -18,13 +18,19 @@ export const signup = async (req, res) => {
       password: hashedPassword,
     });
     await newUser.save();
-    if(newUser){
+    if (newUser) {
       generateToken(newUser._id, res);
-      res.status(201).json({ message: "User created successfully" ,newUser:{_id: newUser._id,
-        fullname: newUser.fullname,
-        email: newUser.email,}});
+      res
+        .status(201)
+        .json({
+          message: "User created successfully",
+          newUser: {
+            _id: newUser._id,
+            fullname: newUser.fullname,
+            email: newUser.email,
+          },
+        });
     }
-
   } catch (error) {
     console.error("Error during signup:", error);
     res
@@ -34,21 +40,24 @@ export const signup = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  const {email, password} = req.body;
+  const { email, password } = req.body;
   try {
     const checkUser = await User.findOne({ email });
     if (!checkUser)
       return res.status(404).json({ message: "User does not exist" });
     const checkPassword = await bcrypt.compare(password, checkUser.password);
     if (!checkPassword)
-      return res.status(400).json({ message: "Invalid credentials" });
-    if(checkUser){
+      return res.status(401).json({ message: "Invalid credentials" });
+    if (checkUser) {
       generateToken(checkUser._id, res);
-      res.status(200).json({ message: "Login successful", checkUser:{
-        _id: checkUser._id,
-        fullname: checkUser.fullname,
-        email: checkUser.email,
-      } });
+      res.status(200).json({
+        message: "Login successful",
+        checkUser: {
+          _id: checkUser._id,
+          fullname: checkUser.fullname,
+          email: checkUser.email,
+        },
+      });
     }
   } catch (error) {
     console.error("Error during login:", error);
@@ -56,14 +65,13 @@ export const login = async (req, res) => {
       .status(500)
       .json({ message: "Something went wrong", error: error.message });
   }
-}
+};
 
 export const logout = (req, res) => {
-  try{
+  try {
     res.clearCookie("jwt");
     res.status(200).json({ message: "Logout successful" });
-  }
-  catch(error){
+  } catch (error) {
     console.error("Error during logout:", error);
     res
       .status(500)
@@ -73,12 +81,12 @@ export const logout = (req, res) => {
 
 export const allUsers = async (req, res) => {
   try {
-    const users = await User.find().select("-password");
-    res.status(200).json(users);
+    const loggedInUser = req.user._id;
+    const filteredUsers = await User.find({
+      _id: { $ne: loggedInUser },
+    }).select("-password");
+    res.status(201).json(filteredUsers);
   } catch (error) {
-    console.error("Error during fetching users:", error);
-    res
-      .status(500)
-      .json({ message: "Something went wrong", error: error.message });
+    console.log("Error in allUsers Controller: " + error);
   }
-}
+};
