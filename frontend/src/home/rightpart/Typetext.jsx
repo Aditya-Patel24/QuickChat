@@ -3,7 +3,7 @@ import { IoSend } from "react-icons/io5";
 
 const Typetext = () => {
   return (
-    <div className="flex space-x-4 h-[8vh] bg-gray-800 items-center pl-8 pb-3 pt-4 mt-1">
+    <div className="flex space-x-4 h-[8vh] bg-gray-800 items-center pl-8 ">
       <div className="w-[90%]">
         <input
           type="text"

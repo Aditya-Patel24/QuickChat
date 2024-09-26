@@ -2,7 +2,7 @@ import React from "react";
 
 const Chatuser = () => {
   return (
-    <div className="flex items-center pl-4 pt-2 pb-2 space-x-3 bg-gray-800 hover:bg-gray-700 duration-800">
+    <div className="relative flex items-center h-[8%] justify-center gap-4 bg-slate-800 hover:bg-slate-700 duration-300 rounded-md">
       <div className="avatar online">
         <div className="w-14 rounded-full">
           <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
