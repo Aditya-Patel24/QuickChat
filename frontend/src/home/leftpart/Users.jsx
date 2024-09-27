@@ -6,12 +6,12 @@ const Users = () => {
   console.log(allUsers)
   return (
     <div>
-      <h1 className="px-8 py-2 text-white font-semibold bg-slate-800 rounded-md">
+      <h1 className="px-8 py-2 text-white font-semibold bg-slate-800 rounded-sm">
         Message
       </h1>
       <div className="py-2 flex-1 overflow-y-auto" style={{maxHeight: "calc(86vh - 10vh)"}}>
-        {allUsers.map((user,index) => (
-          <User key={index} user={user}/>
+        {allUsers.map((value,index) => (
+          <User key={index} user={value}/>
         ))
       }
       </div>

@@ -11,7 +11,7 @@ const Search = () => {
       <input type="text" className="grow" placeholder="Search" />
     </label>
     <button>
-      <FaSearch className="text-[45px] p-2 hover:bg-slate-900 rounded-full duration-300"/>
+      <FaSearch className="text-[45px] p-2 mt-1 hover:bg-slate-900 rounded-full duration-300"/>
     </button>
       </div>
       </form>
