@@ -9,7 +9,7 @@ const Users = () => {
       <h1 className="px-8 py-2 text-white font-semibold bg-slate-800 rounded-sm">
         Message
       </h1>
-      <div className="py-2 flex-1 overflow-y-auto" style={{maxHeight: "calc(86vh - 10vh)"}}>
+      <div className="py-2 flex-1 overflow-y-auto" style={{maxHeight: "calc(85.5vh - 10vh)"}}>
         {allUsers.map((value,index) => (
           <User key={index} user={value}/>
         ))

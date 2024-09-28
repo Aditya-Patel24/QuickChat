@@ -1,11 +1,10 @@
 import React from "react";
 
-const Message = () => {
+const Message = ({message}) => {
   return (
     <div className="p-4">
       <div className="chat chat-start">
-        <div className="chat-bubble chat-bubble-accent">
-          That's never been done in the history of the Jedi. It's insulting!
+        <div className="chat-bubble chat-bubble-accent">{message.message}
         </div>
       </div>
       <div className="chat chat-end">

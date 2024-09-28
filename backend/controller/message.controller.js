@@ -1,7 +1,7 @@
 import Conversation from "../models/conversation.model.js"
 import Message from "../models/message.model.js";
 
-export const sendMessage = async(req,res) => {
+export const sendMessage = async (req,res) => {
 try{  
     const {message} = req.body;
     const {id:receiverId} = req.params;
@@ -41,7 +41,7 @@ try{
         members: {$all: [senderId, chatUser] }
     }).populate("messages");
     if(!conversation){
-        res.status(201).json([]);
+      return res.status(204).json([]);
     }
     const messages = conversation.messages;
     res.status(200).json(messages);

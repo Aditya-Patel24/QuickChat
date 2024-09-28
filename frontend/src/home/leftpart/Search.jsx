@@ -2,7 +2,7 @@ import React from 'react'
 import { FaSearch } from "react-icons/fa";
 const Search = () => {
   return (
-    <div className=" h-[10vh]">
+    <div className="">
     
     <div className="px- py-3 ml-6">
       <form action="">
