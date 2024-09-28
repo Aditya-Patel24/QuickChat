@@ -13,7 +13,7 @@ const Messages = () => {
     )))}
 
     {!loading && messages.length == 0 && (
-      <div className=" text-center mt-[20%]">
+      <div className=" text-center mt-[25%]">
         <p>Say! Hi to Start the Conversation </p>
         </div>
     )}
