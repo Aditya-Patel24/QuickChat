@@ -10,6 +10,11 @@ const io = new Server(server,{
         methods:["GET","POST"]
     },
 });
+
+// real time message code is here
+export const getReceiverSocketId = (receiverId)=>{
+    return users[receiverId];
+}
 const users = {};
 
     //used to listen events on server side
@@ -37,4 +42,4 @@ const users = {};
     io.emit("getOnlineUsers", Object.keys(users));
     });
 })
-export {app,io,server};
+export { app, io, server };

@@ -13,7 +13,11 @@ const Right = () => {
     <div className="text-white w-[70%] bg-slate-900">
       <div>
         {!selectedConversation ? (
+          <>
           <Loading />
+          <p className="flex text-center justify-center text-green-500">No chat selected, Please start conversation by selecting anyone from
+            your contacts</p>
+          </>
         ) : (
           <>
             <Chatuser />

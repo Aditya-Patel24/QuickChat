@@ -5,7 +5,7 @@ import Logout from './Logout'
 
 const Left = ()=> {
   return (
-    <div className="text-white bg-black w-[30%]">
+    <div className="text-white bg-black w-full md:w-[30%]">
       <Search/>
       <div className="flex-1 overflow-y-auto" style={{minHeight: "calc(81.5vh)"}}>
       <Users/>
@@ -15,4 +15,5 @@ const Left = ()=> {
   )
 }
 
-export default Left
+export default Left;
+
