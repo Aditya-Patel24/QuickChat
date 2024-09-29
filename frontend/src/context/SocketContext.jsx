@@ -17,7 +17,7 @@ export const useSocketContext = () => {
         if(authUser){
             const socket=io("http://localhost:4000",{
 query:{
-    userId:authUser.checkUser._id,
+    userId:authUser.checkUser?._id,
 }})
 setSocket(socket);
 socket.on("getOnlineUsers", (users) => {

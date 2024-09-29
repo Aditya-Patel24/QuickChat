@@ -4,6 +4,7 @@ import axios from "axios";
 import { useAuth } from "../context/Authprovider";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
+import Logo from "../../src/assets/Q.png";
 function Signup() {
     const [authUser, setAuthUser] = useAuth();
   const {
@@ -51,11 +52,16 @@ function Signup() {
           onSubmit={handleSubmit(onSubmit)}
           className="border border-white px-6 py-2 rounded-md space-y-3 w-96"
         >
-          <h1 className="text-2xl text-center">
-            Chat<span className="text-green-500 font-semibold">App</span>
+            {/* Logo */}
+            <div className="flex justify-center relative">
+            <img src={Logo} alt="logo" className="absolute top-[-20px] left-1/2 transform -translate-x-1/2 w-32 h-32" /> 
+          </div>
+          
+          <h1 className="text-2xl pt-[20%] text-center">
+            Quick<span className="text-green-500 font-semibold">Chat</span>
           </h1>
           <h2 className="text-xl text-white font-bold">Signup</h2>
-          <br />
+         
           {/* Fullname */}
           <label className="input input-bordered flex items-center gap-2">
             <svg
@@ -119,7 +125,7 @@ function Signup() {
             <input
               type="password"
               className="grow"
-              placeholder="password"
+              placeholder="Password"
               {...register("password", { required: true })}
             />
           </label>
@@ -146,7 +152,7 @@ function Signup() {
             <input
               type="password"
               className="grow"
-              placeholder="confirm password"
+              placeholder="Confirm Password"
               {...register("confirmPassword", {
                 required: true,
                 validate: validatePasswordMatch,
@@ -173,7 +179,7 @@ function Signup() {
             <input
               type="submit"
               value="Signup"
-              className="text-white bg-green-500 px-2 py-1 cursor-pointer rounded-lg"
+              className="text-white bg-green-500 px-4 py-2 cursor-pointer rounded-lg"
             />
           </div>
         </form>

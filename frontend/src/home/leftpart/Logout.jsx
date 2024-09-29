@@ -3,6 +3,7 @@ import { IoIosLogOut } from "react-icons/io";
 import { BiLogOutCircle } from "react-icons/bi";
 import Cookies from "js-cookie"
 import axios from "axios"
+import toast from 'react-hot-toast';
 const Logout = () => {
   const [loading, setLoading]= useState(false)
   const handleOnClick = async()=>{

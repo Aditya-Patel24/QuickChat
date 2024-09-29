@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "../context/Authprovider";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
-
+import Logo from "../../src/assets/Q.png";
 function Login() {
   const [authUser, setAuthUser] = useAuth();
 
@@ -40,13 +40,16 @@ function Login() {
       <div className="flex h-screen items-center justify-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="border border-white px-6 py-2 rounded-md space-y-3 w-96"
-        >
-          <h1 className="text-2xl text-center">
-            Chat<span className="text-green-500 font-semibold">App</span>
+          className="border border-white px-6 py-2 rounded-md space-y-3 w-96">
+             {/* Logo */}
+          <div className="flex justify-center relative">
+            <img src={Logo} alt="logo" className="absolute top-[-20px] left-1/2 transform -translate-x-1/2 w-32 h-32" /> 
+          </div>
+          
+          <h1 className="text-2xl pt-[20%] text-center">
+            Quick<span className="text-green-500 font-semibold">Chat</span>
           </h1>
           <h2 className="text-xl text-white font-bold">Login</h2>
-          <br />
 
           {/* Email */}
           <label className="input input-bordered flex items-center gap-2">
@@ -88,7 +91,7 @@ function Login() {
             <input
               type="password"
               className="grow"
-              placeholder="password"
+              placeholder="Password"
               {...register("password", { required: true })}
             />
           </label>
@@ -111,7 +114,7 @@ function Login() {
             <input
               type="submit"
               value="Login"
-              className="text-white bg-green-500 px-2 py-1 cursor-pointer rounded-lg"
+              className="text-white bg-green-500 px-4 py-2 cursor-pointer rounded-lg"
             />
           </div>
         </form>
