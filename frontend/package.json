@@ -21,6 +21,7 @@
     "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^6.26.2",
     "react-spinners": "^0.14.1",
+    "socket.io-client": "^4.8.0",
     "zustand": "^5.0.0-rc.2"
   },
   "devDependencies": {

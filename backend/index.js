@@ -5,9 +5,10 @@ import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import userRouter from './routes/user.route.js';
 import messageRoute from './routes/message.route.js';
+import { app, server } from './socketIO/server.js';
 
 dotenv.config();
-const app = express();
+// const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
@@ -25,4 +26,4 @@ mongoose.connect(URI)
 app.use('/api/user', userRouter); 
 app.use('/api/message', messageRoute); 
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
