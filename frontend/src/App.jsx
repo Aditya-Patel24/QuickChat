@@ -15,10 +15,10 @@ function App() {
     <Routes>
       <Route path="/" element={
         authUser ?
-        <div className="flex h-screen">
+        (<div className="flex h-screen">
         <Left/>
         <Right/>
-       </div> : <Navigate to={"/login"} />
+       </div> ): (<Navigate to={"/login"} />)
       }/>
       <Route path="/signup" element={authUser?<Navigate to={"/"}/>:<Signup />}/>
       <Route path="/login" element={authUser?<Navigate to={"/"}/>:<Login />} />
