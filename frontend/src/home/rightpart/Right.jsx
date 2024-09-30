@@ -10,7 +10,7 @@ const Right = () => {
   useEffect(() => {
     return setSelectedConversation(null)  },[setSelectedConversation])
   return (
-    <div className="text-white w-[70%] bg-slate-900">
+    <div className="text-white w-[70%] bg-slate-900 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] ,transparent_100%)]">
       <div>
         {!selectedConversation ? (
           <>

@@ -32,4 +32,4 @@ setTimeout(()=>{
   )
 }
 
-export default Messages
+export default Messages;
