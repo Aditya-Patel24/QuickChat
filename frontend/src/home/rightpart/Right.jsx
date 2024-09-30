@@ -10,14 +10,14 @@ const Right = () => {
   useEffect(() => {
     return setSelectedConversation(null)  },[setSelectedConversation])
   return (
-    <div className="text-white w-[70%] bg-slate-900 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] ,transparent_100%)]">
-      <div>
+    <div className="z-5 text-white w-full bg-slate-900 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] ,transparent_100%)] h-screen">
+      <>
         {!selectedConversation ? (
-          <>
+          <div className="text-white flex flex-col items-center justify-center">
           <Loading />
           <p className="flex text-center justify-center text-green-500">No chat selected, Please start conversation by selecting anyone from
             your contacts</p>
-          </>
+          </div>
         ) : (
           <>
             <Chatuser />
@@ -27,9 +27,8 @@ const Right = () => {
               <Typetext />
           </>
         )}
-    </div>
+    </>
       </div>
   );
 };
-
 export default Right;

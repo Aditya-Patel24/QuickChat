@@ -11,7 +11,7 @@ const Chatuser = () => {
   console.log("chatuser",selectedConversation);
   if (!selectedConversation) {
     return (
-      <div className="relative flex items-center h-[10vh] justify-center gap-4 bg-slate-800 hover:bg-slate-700 duration-300 rounded-b-sm">
+      <div className="relative flex items-center h-auto md:h-[10vh] justify-center gap-4 bg-slate-800 hover:bg-slate-700 duration-300 rounded-b-sm">
         <h1 className="text-xl">No conversation selected</h1>
       </div>
     );

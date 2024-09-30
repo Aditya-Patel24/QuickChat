@@ -10,9 +10,9 @@ const Left = ()=> {
     // background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
 
-    <div className="text-white bg-[#141E30] w-[30%]">
+    <div className="z-2 text-white bg-[#141E30] w-full">
       <Search/>
-      <div className="flex-1 overflow-y-auto" style={{minHeight: "calc(81.5vh)"}}>
+      <div className="flex-1 overflow-y-auto min-h-[86.5vh] md:min-h-[81.5vh]">
       <Users/>
       </div>
       <Logout/>
