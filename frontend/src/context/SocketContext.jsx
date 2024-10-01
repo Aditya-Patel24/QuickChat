@@ -15,7 +15,7 @@ export const useSocketContext = () => {
     const [onlineUsers,setOnlineUsers] = useState([]); 
     useEffect(()=>{
         if(authUser){
-            const socket=io("http://localhost:4000",{
+            const socket=io("https://quickchat-aditya.onrender.com",{
 query:{
     userId:authUser.checkUser?._id,
 }})

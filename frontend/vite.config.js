@@ -8,7 +8,7 @@ export default defineConfig({
   port: 3001,
     proxy: {
       "/api": {
-        target:'http://localhost:4000',
+        target:'https://quickchat-aditya.onrender.com',
         changeOrigin: true,
     },
   },
