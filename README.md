@@ -16,7 +16,7 @@ _QuickChat interface on desktop and mobile_
 
 2. **Deployed Link**:
   
-     **[Live Demo]([https://quickchat-aditya.onrender.com](https://quickchat-aditya.onrender.com/))**
+     **[Live Demo](https://quickchat-aditya.onrender.com/)**
 
 ## Features
 
