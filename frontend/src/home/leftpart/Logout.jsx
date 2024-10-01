@@ -9,7 +9,7 @@ const Logout = () => {
   const handleOnClick = async()=>{
     try{
       setLoading(true);
-      const res = await axios.post("/api/user/logout");
+      const res = await axios.post("https://quickchat-aditya.onrender.com/api/user/logout");
       localStorage.removeItem("ChatApp");
       Cookies.remove("jwt");
       setLoading(false);

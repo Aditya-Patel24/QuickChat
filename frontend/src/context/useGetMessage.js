@@ -11,7 +11,7 @@ import axios from "axios";
         setLoading(true);
         if (selectedConversation && selectedConversation._id) {
           try {
-            const res = await axios.get(`/api/message/get/${selectedConversation._id}`);
+            const res = await axios.get(`https://quickchat-aditya.onrender.com/api/message/get/${selectedConversation._id}`);
             setMessages(res.data);
             setLoading(false);
           } catch (error) {

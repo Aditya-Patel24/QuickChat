@@ -9,7 +9,7 @@ import axios from "axios";
       const sendMessages = async (message) => {
         setLoading(true);
           try {
-            const res = await axios.post(`/api/message/send/${selectedConversation._id}`,{message});
+            const res = await axios.post(`https://quickchat-aditya.onrender.com/api/message/send/${selectedConversation._id}`,{message});
             setMessages([...messages,res.data.newMessage]);
             setLoading(false);
           } catch (error) {

@@ -9,7 +9,7 @@ function useGetAllUsers() {
       setLoading(true);
       try {
         const token = Cookies.get("jwt");
-        const response = await axios.get("/api/user/allusers", {
+        const response = await axios.get("https://quickchat-aditya.onrender.com/api/user/allusers", {
           withCredentials: true,  // Automatic process to include cookie
           // credentials: "include",     
           headers: {

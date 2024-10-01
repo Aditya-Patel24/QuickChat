@@ -21,7 +21,7 @@ function Login() {
     };
     // console.log(userInfo);
     axios
-      .post("/api/user/login", userInfo)
+      .post("https://quickchat-aditya.onrender.com/api/user/login", userInfo)
       .then((response) => {
         if (response.data) {
           toast.success("Login successful");
