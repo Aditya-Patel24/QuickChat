@@ -5,7 +5,7 @@ const Typetext = () => {
   const {loading, sendMessages} = useSendMessage();
   const [message, setMessage] = useState("");
   const handleSubmit = async(e) => {
-    console.log("text", e);
+    // console.log("text", e);
 e.preventDefault();
 await sendMessages(message);
 setMessage("")

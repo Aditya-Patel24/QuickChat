@@ -8,7 +8,7 @@ const Chatuser = () => {
     return onlineUsers.includes(userId)?"online":"offline";
   };
   const {selectedConversation}= useConversation();
-  console.log("chatuser",selectedConversation);
+  // console.log("chatuser",selectedConversation);
   if (!selectedConversation) {
     return (
       <div className="relative flex items-center h-auto md:h-[10vh] justify-center gap-4 bg-slate-800 hover:bg-slate-700 duration-300 rounded-b-sm">

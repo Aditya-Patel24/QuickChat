@@ -7,7 +7,7 @@ const User = ({user}) => {
   const isSelected = selectedConversation?._id === user._id;
   const {socket, onlineUsers}  = useSocketContext();
   const isOnline = onlineUsers.includes(user._id);
-  console.log("Checking user:", user._id, "Online users:", onlineUsers);
+  // console.log("Checking user:", user._id, "Online users:", onlineUsers);
 
   return (
     <div className={` ${isSelected ? "bg-slate-700" : "hover:bg-slate-800"}`} onClick={() => setSelectedConversation(user)}>

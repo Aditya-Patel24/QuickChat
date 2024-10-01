@@ -5,7 +5,7 @@ import Loading from "../../components/Loading"
 import useGetSocketMessage from '../../context/useGetSocketMessage.jsx'
 const Messages = () => {
   const { loading,messages } = useGetMessage();
-  console.log(messages);
+  // console.log(messages);
   useGetSocketMessage();  //Listening incoming messages
   const lastMsgRef = useRef();
   useEffect(()=>{
