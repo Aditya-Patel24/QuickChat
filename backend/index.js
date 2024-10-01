@@ -27,8 +27,8 @@ mongoose.connect(URI)
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
-app.use('https://quickchat-aditya.onrender.com/api/user', userRouter); 
-app.use('https://quickchat-aditya.onrender.com/api/message', messageRoute); 
+app.use('/api/user', userRouter); 
+app.use('/api/message', messageRoute); 
 
 //---- deployment code------
 app.use(express.static(path.join(_dirname,"/frontend/dist")));
