@@ -32,8 +32,8 @@ const Search = () => {
         <img src={Logo} alt="logo" className="w-24 h-24 absolute mt-[-22px] ml-[-33px]" />
     <label className="input bg-[#141E30] input-bordered w-[75%] flex items-center gap-2 rounded-full">
       <input type="text" className="grow" placeholder="Search" value={search} onChange={(e)=>setSearch(e.target.value)} />
-    <button>
-      <FaSearch className="text-[45px] p-2 mr-[-10px] mt-1 hover:bg-slate-900 rounded-full duration-300"/>
+    <button >
+      <FaSearch className="text-[45px] p-2 absolute right-8 top-3 md:relative md:top-0 md:right-0  hover:bg-slate-900 rounded-full duration-300"/>
     </button>
     </label>
       </div>
