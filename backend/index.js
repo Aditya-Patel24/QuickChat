@@ -6,8 +6,12 @@ import cookieParser from 'cookie-parser';
 import userRouter from './routes/user.route.js';
 import messageRoute from './routes/message.route.js';
 import { app, server } from './socketIO/server.js';
-
+import path from "path";
+// import { fileURLToPath } from 'url';
 dotenv.config();
+dotenv.config();
+const _dirname = path.resolve();
+// const _dirname = dirname(fileURLToPath(import.meta.url));
 // const app = express();
 app.use(express.json());
 app.use(cookieParser());
@@ -25,5 +29,11 @@ mongoose.connect(URI)
 
 app.use('/api/user', userRouter); 
 app.use('/api/message', messageRoute); 
+
+//---- deployment code------
+app.use(express.static(path.join(_dirname,"/frontend/dist")));
+app.get('*',(_,res) => {
+    res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
+})
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
